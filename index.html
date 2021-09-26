@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>D&D Frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/dnd-frame.webmanifest" />
+    <style>
+      body {
+        margin: 0;
+      }
+      main {
+        background-image: url('/images/stone-wall.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: fixed;
+        max-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+      }
+      .beam-wrapper {
+        height: 100vh;
+        overflow: hidden;
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+
+      .beam-image {
+        height: 115%;
+        margin-top: -35%;
+      }
+
+      .beam-image.left {
+        margin-left: -34%;
+      }
+
+      .beam-image.right {
+        margin-left: 30%;
+      }
+
+      #frame-content {
+        flex-grow: 1;
+      }
+    </style>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').then(
+            function (registration) {
+              // Registration was successful
+              console.log(
+                'ServiceWorker registration successful with scope: ',
+                registration.scope,
+              );
+            },
+            function (err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            },
+          );
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="beam-wrapper">
+        <img src="/images/wooden-beam.png" class="beam-image left" />
+      </div>
+      <div id="frame-content"></div>
+      <div class="beam-wrapper">
+        <img src="/images/wooden-beam.png" class="beam-image right" />
+      </div>
+    </main>
+  </body>
+</html>

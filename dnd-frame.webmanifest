@@ -1,0 +1,26 @@
+{
+  "name": "D&D Frame",
+  "short_name": "d&dFrame",
+  "description": "A frame",
+  "icons": [
+    {
+      "src": "icons/touch-icon-57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/touch-icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/touch-icon-114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "theme_color": "#9d0a0e",
+  "background_color": "#9d0a0e"
+}
